@@ -6,7 +6,7 @@ const geoCode = require('./utils/geocode')
 const foreCast = require('./utils/forecast')
 
 const app = express()
-
+const port = process.env.PORT || 3000
 
 
 //define paths for express config
@@ -119,10 +119,10 @@ app.get('*', (req, res) => {
     })
 })
 
-app.listen(3000, (error) => {
+app.listen(port, (error) => {
     if (!error) {
-        console.log('Server is Up at port 3000')
+        console.log('Server is Up at port ' + port)
     } else {
-        console.log('Error')
+        console.log('Error--Server Down.')
     }
 })
